@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+
+  h1 {color:  #DFDAE5;}
+  button {height: 22px; margin-bottom: 10px;}
+  body{
+    background-color: #4F4B53;}
+    tr{ color: #9C98A2;}
+    ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+  </style>
+<title>{{ TITLE }}</title>
+</head>
+<body>
+
+<ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#folloup">To Follow Up</a></li>
+  <li><a href="#completed">Completed</a></li>
+</ul>
+  <center>
+<h1> Welcome To EasyLab <button type = "submit"> NEW + </button></h1>
+
+</center>
+<center>
+<input type="text" name="search_patient"> <br>
+<button type = "submit"> SEARCH </button>
+</center>
+<table border="2" align = "center" id = "my_table">
+  <tr>
+    <th> FIRST NAME </th>
+    <th> LAST NAME </th>
+    <th> DATE OF BIRTH </th>
+    <th> DOCTOR </th>
+    <th> PRICE </th>
+    <th> PAYMENT </th>
+    <th> DATE </th>
+    <th> RECEIPT </th>
+  </tr>
+  {% for visit in visitlist %}
+  <tr>
+    <td>{{ visit.patient.first_name }}</td>
+    <td>{{ visit.patient.last_name }}</td>
+    <td>{{ visit.patient.dob }}</td>
+    <td>{{ visit.doctor_name }}</td>
+    <td>{{ visit.price }}</td>
+    <td>{{ visit.payment_type }}</td>
+    <td>{{ visit.date }}</td>
+    <td>{{ visit.receipt.name }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+</body>
+</html>
