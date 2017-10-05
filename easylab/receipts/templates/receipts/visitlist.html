@@ -35,19 +35,22 @@ li a:hover {
 <title>{{ TITLE }}</title>
 </head>
 <body>
-
+   <script type = "text/javaScript"
+         src = "button.js">
+</script>
 <ul>
   <li><a class="active" href="#home">Home</a></li>
   <li><a href="#folloup">To Follow Up</a></li>
   <li><a href="#completed">Completed</a></li>
 </ul>
   <center>
-<h1> Welcome To EasyLab <button type = "submit"> NEW + </button></h1>
+<h1> Welcome To EasyLab <button type = "submit" name = "new"> NEW + </button></h1>
 
 </center>
 <center>
+  <form action = "">
 <input type="text" name="search_patient"> <br>
-<button type = "submit"> SEARCH </button>
+<button type = "submit" name = "search"> SEARCH </button>
 </center>
 <table border="2" align = "center" id = "my_table">
   <tr>
@@ -73,6 +76,6 @@ li a:hover {
   </tr>
   {% endfor %}
 </table>
-
+</form>
 </body>
 </html>
