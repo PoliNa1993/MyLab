@@ -25,7 +25,7 @@
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#"   style="color: #c2c0c3;">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/visits"   style="color: #c2c0c3;">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/followup"   style="color: #c2c0c3;">To Follow Up</a>
@@ -56,7 +56,6 @@
           <th class="th"> FIRST NAME </th>
           <th class="th"> LAST NAME </th>
           <th class="th"> DATE OF BIRTH </th>
-          <th class="th"> PHONE # </th>
           <th class="th"> DOCTOR </th>
           <th class="th"> PRICE </th>
           <th class="th"> PAYMENT </th>
@@ -73,7 +72,6 @@
             <td>{{ visit.patient.first_name }}</td>
             <td>{{ visit.patient.last_name }}</td>
             <td>{{ visit.patient.dob }}</td>
-            <td>{{ visit.patient.phone }}</td>
             <td>{{ visit.doctor_name }}</td>
             <td>{{ visit.price }}</td>
             <td>{{ visit.payment_type }}</td>
@@ -119,10 +117,6 @@
             <script>
               $('#date-of-birth').datepicker({  });
             </script>
-          </div>
-          <div class="form-group">
-            <label class="form-control-label" for="formGroupExampleInput">Phone Number</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
           </div>
           <div>
           <select class="custom-select">

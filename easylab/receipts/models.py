@@ -23,3 +23,4 @@ class Visit (models.Model):
     payment_type = models.CharField(max_length=10, blank = True, null = True)
     doctor_name = models.CharField(max_length=30, blank = True, null = True)
     receipt = models.FileField(blank = True, null = True)
+    status = models.CharField(max_length=25, default="Not Completed")
