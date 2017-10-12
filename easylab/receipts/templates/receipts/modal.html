@@ -1,0 +1,106 @@
+
+  <div class="modal" id="new-entry">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+            <div class="modal-header">
+              <h5 class="modal-title">Please Enter The Following Information</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+        <!--MODAL BODY-->
+        <div class="modal-body">
+          <form >
+            <!--FIRST NAME-->
+                <div class="form-group" name= "fname">
+                  <label class="form-control-label" for="formGroupExampleInput">First Name</label>
+                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                </div>
+            <!--LAST NAME-->
+                <div class="form-group" name = "lname">
+                  <label class="form-control-label" for="formGroupExampleInput2">Last Name</label>
+                  <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+                </div>
+            <!--DATE OF BIRTH-->
+                <div class="form-group" name = "dob">
+                  <label class="form-control-label">Date of birth</label>
+                  <input type="text" class="form-control" id="date-of-birth" />
+                  <script>
+                    $('#date-of-birth').datepicker({  });
+                  </script>
+                </div>
+            <!--Phone NUmber -->
+                <div class="form-group" name ="phone">
+                  <label class="form-control-label" for="formGroupExampleInput3">Phone Number</label>
+                  <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Example input">
+                </div>
+            <!--Choose a Doctor-->
+                <div class="form-group" name="choose_a_doctor">
+                    <select class="custom-select" name = "doctor" id = "doctor_name">
+                      <option selected>Choose a Doctor</option>
+                      <option value="1">Dr. Bazzo</option>
+                      <option value="2">Dr. Dupont</option>
+                      <option value="3">Dr. Oulianine</option>
+                      <option value="4">Dr. Aubin</option>
+                      <option value="5">Dr. Mezrahi</option>
+                      <option value="6">Dr. Faviel Font</option>
+                      <option value="7">Dr. Dubois</option>
+                      <option value="8">Dr. Bianki</option>
+                </select>
+              </div>
+              <!--Price payed for a lab exam-->
+                  <div class="form-group" name = "price">
+                    <label class="form-control-label" for="formGroupExampleInput4">Price $$$</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput4" placeholder="Example input">
+                  </div>
+              <!--Type of a Payement-->
+                  <div class = "form-group" name = "ptype">
+                      <select class="custom-select" name = "type" id = "type">
+                        <option selected>Payment Type</option>
+                        <option value="1">Cash</option>
+                        <option value="2">Debit</option>
+                        <option value="3">Visa</option>
+                        <option value="4">Mastercard</option>
+                      </select>
+                </div>
+              <!--Date of an Exam-->
+                <div class="form-group" name = "date">
+                    <label class="form-control-label">Date of the exam</label>
+                    <input type="text" class="form-control" id="date-of-exam" />
+                      <script>
+                        $('#date-of-exam').datepicker({  });
+                      </script>
+                </div>
+                <!--Receipt Upload a file from a computer-->
+
+                      <div class="col-lg-6 col-sm-6 col-12" name = "receipt">
+                          <div class="input-group">
+                              <label class="input-group-btn">
+                                  <span class="btn btn-primary">
+                                      Browse&hellip; <input type="file" style="display: none;" multiple>
+                                  </span>
+                              </label>
+                              <input type="text" class="form-control" readonly id="receipt">
+                          </div>
+                      </div>
+                  <!--Status Received result form a lab or not-->
+                  <div>
+                    <select class="custom-select" name = "status" id = "status">
+                      <option selected>Status</option>
+                      <option value="1">Not Completed</option>
+                      <option value="2">Completed</option>
+                    </select>
+                  </div>
+          </form>
+        </div>
+        <!--Modal Footer-->
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary" id= "btnSave">Save changes</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+      </div>
+    </div>`
+</div>

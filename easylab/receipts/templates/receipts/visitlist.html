@@ -1,202 +1,143 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<!--Links And scripts from boostrap-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
 
+<!--  CSS Code -->
   <style>
   body {background-color: #4f4951;}
   #grey{color: #c2c0c3;}
   .th{color: #c2c0c3;}
   </style>
+<!-- End of CSS code-->
 
 <title>EasyLab</title>
 </head>
+<!--BODY -->
 <body>
+  <!-- Navigation Bar-->
   <div class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #4f4951;">
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#"   style="color: #c2c0c3;">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/followup"   style="color: #c2c0c3;">To Follow Up</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/completed"   style="color: #c2c0c3;">Completed</a>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div>
-    </nav>
+          <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #4f4951;">
+            <div class="collapse navbar-collapse">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#"   style="color: #c2c0c3;">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/followup"   style="color: #c2c0c3;">To Follow Up</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/completed"   style="color: #c2c0c3;">Completed</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0" id="searchform"  method="get">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="q" id="searchbox">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
+          </nav>
+  <!-- Navigation Bar End-->
 
     <h1 class="h1 text-center" id="grey"> Welcome To EasyLab</h1>
-
-    <div class="text-center">
-      <button class="btn btn-lg" data-toggle="modal" data-target="#new-entry" style="background-color: #c2c0c3; margin: 5px;">
-        New+
-      </button>
-    </div>
-
+          <div class="text-center">
+            <button id = "new" class="btn btn-lg" style="background-color: #c2c0c3; margin: 5px;">
+              New+
+            </button>
+          </div>
+ <!-- Table Content -->
     <table id="my_table" class="table" >
-      <thead>
-        <tr>
-          <th>&nbsp;</th>
-          <th class="th"> FIRST NAME </th>
-          <th class="th"> LAST NAME </th>
-          <th class="th"> DATE OF BIRTH </th>
-          <th class="th"> PHONE # </th>
-          <th class="th"> DOCTOR </th>
-          <th class="th"> PRICE </th>
-          <th class="th"> PAYMENT </th>
-          <th class="th"> DATE </th>
-          <th class="th"> RECEIPT </th>
-          <th class="th"> STATUS</th>
-          <th class="th"> EDIT </th>
-        </tr>
-      </thead>
+        <thead>
+              <tr>
+                <th>&nbsp;</th>
+                <th class="th"> FIRST NAME </th>
+                <th class="th"> LAST NAME </th>
+                <th class="th"> DATE OF BIRTH </th>
+                <th class="th"> PHONE # </th>
+                <th class="th"> DOCTOR </th>
+                <th class="th"> PRICE </th>
+                <th class="th"> PAYMENT </th>
+                <th class="th"> DATE </th>
+                <th class="th"> RECEIPT </th>
+                <th class="th"> STATUS</th>
+                <th class="th"> EDIT </th>
+              </tr>
+        </thead>
+
       <tbody>
-      {% for visit in visitlist %}
-          <tr style={% if visit.status == 'Completed'%} 'background-color: #9de5a2' {% else %} 'background-color: #f6a39a'{% endif %}>
-            <td><input type="checkbox" />
-            <td>{{ visit.patient.first_name }}</td>
-            <td>{{ visit.patient.last_name }}</td>
-            <td>{{ visit.patient.dob }}</td>
-            <td>{{ visit.patient.phone }}</td>
-            <td>{{ visit.doctor_name }}</td>
-            <td>{{ visit.price }}</td>
-            <td>{{ visit.payment_type }}</td>
-            <td>{{ visit.date }}</td>
-            <td>{{ visit.receipt.name }}</td>
-            <td>{{visit.status}}</td>
-            <td class="buttons">
-                   <a href="#" class="btn  a-btn-slide-text" style="background-color: #c2c0c3; color:#4f4951; ">
-                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-                        <span><strong>Edit</strong></span>
-                    </a>
-            </td>
-          </tr>
-      {% endfor %}
+            {% for visit in visitlist %}
+            <tr style={% if visit.status == 'Completed'%} 'background-color: #9de5a2' {% else %} 'background-color: #f6a39a'{% endif %}>
+                    <td><input type="checkbox" />
+                    <td>{{ visit.patient.first_name }}</td>
+                    <td>{{ visit.patient.last_name }}</td>
+                    <td>{{ visit.patient.dob }}</td>
+                    <td>{{ visit.patient.phone }}</td>
+                    <td>{{ visit.doctor_name }}</td>
+                    <td>{{ visit.price }}</td>
+                    <td>{{ visit.payment_type }}</td>
+                    <td>{{ visit.date }}</td>
+                    <td>{{ visit.receipt.name }}</td>
+                    <td>{{visit.status}}</td>
+                    <td class="buttons">
+                           <a href="#" class="btn  a-btn-slide-text" style="background-color: #c2c0c3; color:#4f4951; ">
+                                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                                <span><strong>Edit</strong></span>
+                            </a>
+                    </td>
+            </tr>
+          {% endfor %}
       </tbody>
     </table>
-
   </div>
 
-  <div class="modal" id="new-entry">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Please Enter The Following Information</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <!--MODAL-->
-        <form>
-          <div class="form-group">
-            <label class="form-control-label" for="formGroupExampleInput">First Name</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-          </div>
-          <div class="form-group">
-            <label class="form-control-label" for="formGroupExampleInput2">Last Name</label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-          </div>
-          <div class="form-group">
-            <label class="form-control-label">Date of birth</label>
-            <input type="text" class="form-control" id="date-of-birth" />
-            <script>
-              $('#date-of-birth').datepicker({  });
-            </script>
-          </div>
-          <div class="form-group">
-            <label class="form-control-label" for="formGroupExampleInput">Phone Number</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-          </div>
-          <div>
-          <select class="custom-select">
-            <option selected>Choose a Doctor</option>
-            <option value="1">Dr. Bazzo</option>
-            <option value="2">Dr. Dupont</option>
-            <option value="3">Dr. Oulianine</option>
-            <option value="4">Dr. Aubin</option>
-            <option value="5">Dr. Mezrahi</option>
-            <option value="6">Dr. Faviel Font</option>
-            <option value="7">Dr. Dubois</option>
-            <option value="8">Dr. Bianki</option>
-          </select>
-        </div>
-          <div class="form-group">
-            <label class="form-control-label" for="formGroupExampleInput">Price $$$</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-          </div>
-          <div>
-          <select class="custom-select">
-            <option selected>Payment Type</option>
-            <option value="1">Cash</option>
-            <option value="2">Debit</option>
-            <option value="3">Visa</option>
-            <option value="4">Mastercard</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-control-label">Date of the exam</label>
-          <input type="text" class="form-control" id="date-of-exam" />
-          <script>
-            $('#date-of-exam').datepicker({  });
-          </script>
-        </div>
-        <div class="col-lg-6 col-sm-6 col-12">
-                    <h4>Input Groups</h4>
-                    <div class="input-group">
-                        <label class="input-group-btn">
-                            <span class="btn btn-primary">
-                                Browse&hellip; <input type="file" style="display: none;" multiple>
-                            </span>
-                        </label>
-                        <input type="text" class="form-control" readonly>
-                    </div>
-                </div>
-                <div>
-                <select class="custom-select">
-                  <option selected>Status</option>
-                  <option value="1">Not Completed</option>
-                  <option value="2">Completed</option>
-                </select>
-              </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+  <!-- Including Modal, What appears when you press New Button-->
+
+        {% include 'receipts/modal.html' %}
+
+<!-- End of Modal-->
+
 <script>
-$(function() {
+   // When you press New button, new information should be added to the table
+
+      $(function() {
+        $('#new').click(function() {
+          $('#new-entry').modal('show');
+        });
+
+        $('#btnSave').click(function() {
+          var fname = $("#formGroupExampleInput").val();
+          var lname = $("#formGroupExampleInput2").val();
+          var dob = $("#date-of-birth").val();
+          var phone = $("#formGroupExampleInput3").val();
+          var doctor = $("#doctor_name").val();
+          var price = $("#formGroupExampleInput4").val();
+          var type = $("#type").val();
+          var date = $("#date-of-exam").val();
+          var receipt = $("#receipt").val();
+          var status = $("#status").val();
+          var row = "<tr><td>"+fname+"</td><td>"+lname+"</td><td>"+dob+"</td><td>"+phone+"</td><td>"+doctor+"</td><td>"
+          +price+"</td><td>"+type+"</td><td>"+date+"</td><td>"+receipt+"</td><td>"+status+"</td><td></tr>"
+          $('#my_table').append(row);
+          $('#new-entry').modal('hide');
+        });
 
   // We can attach the `fileselect` event to all file inputs on the page
-  $(document).on('change', ':file', function() {
-    var input = $(this),
-        numFiles = input.get(0).files ? input.get(0).files.length : 1,
-        label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-    input.trigger('fileselect', [numFiles, label]);
-  });
+
+        $(document).on('change', ':file', function() {
+          var input = $(this),
+              numFiles = input.get(0).files ? input.get(0).files.length : 1,
+              label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+          input.trigger('fileselect', [numFiles, label]);
+        });
 
   // We can watch for our custom `fileselect` event like this
-  $(document).ready( function() {
       $(':file').on('fileselect', function(event, numFiles, label) {
 
           var input = $(this).parents('.input-group').find(':text'),
@@ -209,7 +150,6 @@ $(function() {
           }
 
       });
-  });
 
 });
 </script>

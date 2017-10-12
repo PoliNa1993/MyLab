@@ -11,6 +11,7 @@ class Patient(models.Model):
     email = models.EmailField(max_length=254)
     phone = models.CharField(max_length = 30)
 
+
     def __str__(self):
         return "Patient: " + self.first_name + ' ' + self.last_name
 

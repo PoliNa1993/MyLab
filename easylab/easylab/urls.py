@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^visits/', visit_list),
     url(r'^followup/$', follow_up),
     url(r'^completed/$', completed),
+
 ]
